@@ -28,10 +28,10 @@ public class webtablehandle {
 	private By submit_button = By.id("submit");
 	private By newRecod = By.xpath("//tbody//tr[4]//td");
 
-	private By elementLink = By.className("card-body");
+
 
 	public void navigatetoRegistaion() {
-		driver.findElement(elementLink).click();
+	
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		driver.findElement(webtablelink).click();
 

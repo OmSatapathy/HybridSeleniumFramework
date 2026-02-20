@@ -5,7 +5,7 @@ import pageobjects.webtablehandle;
 
 public class Test extends Basetest{
 	
-	@org.testng.annotations.Test
+	@org.testng.annotations.Test(priority = 1)
 	public void navigateTourl() {
 		
 		Elements obj = new Elements(driver);
@@ -14,7 +14,7 @@ public class Test extends Basetest{
 	}
 	
 	
-	@org.testng.annotations.Test
+	@org.testng.annotations.Test(priority = 2)
 	public void verifyRegistation() {
 		webtablehandle obj = new webtablehandle(driver);
 		obj.navigatetoRegistaion();

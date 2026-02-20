@@ -15,7 +15,7 @@ public class Elements {
 		this.driver = driver;
 	}
 
-	private By elementLink = By.className("card-body");
+	private By elementLink = By.xpath("//h5[contains(text(),'Elements')]");
 	private By textfield = By.xpath("//*[contains(text(),'Text Box')]");
 	private By full_Name = By.id("userName");
 	private By email = By.id("userEmail");
@@ -25,8 +25,8 @@ public class Elements {
 
 	public void navigateForm() {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-		WebElement element = wait.until(ExpectedConditions.elementToBeClickable(By.className("card-body")));
-		element.click();
+	    wait.until(ExpectedConditions.elementToBeClickable(elementLink));
+	    driver.findElement(elementLink).click();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		driver.findElement(textfield).click();
 	}

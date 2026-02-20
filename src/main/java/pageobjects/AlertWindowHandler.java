@@ -86,14 +86,17 @@ public class AlertWindowHandler {
 		driver.findElement(promptAlert).click();
 		System.out.println(alert.getText());
 		alert.sendKeys("its ok");
+		alert.accept();
+		
 
 	}
 
 	public void frameHandle() {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		wait.until(ExpectedConditions.elementToBeClickable(frameLink));
 		driver.findElement(frameLink).click();
 
 		driver.switchTo().frame(0);
-		System.out.println(driver.findElement(simpleframe).getText());
 
 		driver.switchTo().parentFrame();
 		System.out.println(driver.getTitle());
