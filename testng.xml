@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite parallel="classes" name="Suite">
-<parameter name="browser" value="chrome"/>
-  <test  name="Test">
+<suite name="Suite">
+  <test thread-count="5" name="Test">
     <classes>
-      <class name="uitests.Test"/>
-      <class name="uitests.WindowHandleTest"/>
-    
+      <class name="apiTests.getApiTest"/>
+      <class name="uitests.Basetest"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
