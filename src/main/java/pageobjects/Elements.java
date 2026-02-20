@@ -4,6 +4,9 @@ import java.time.Duration;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class Elements {
 	WebDriver driver;
@@ -14,20 +17,24 @@ public class Elements {
 
 	private By elementLink = By.className("card-body");
 	private By textfield = By.xpath("//*[contains(text(),'Text Box')]");
-	private By full_Name= By.id("userName");
+	private By full_Name = By.id("userName");
 	private By email = By.id("userEmail");
 	private By current_address = By.id("currentAddress");
 	private By permanent_address = By.id("permanentAddress");
 	private By submit_btn = By.id("submit");
-	
-	
+
 	public void navigateForm() {
-		driver.findElement(elementLink).click();
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		WebElement element = wait.until(ExpectedConditions.elementToBeClickable(By.className("card-body")));
+		element.click();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		driver.findElement(textfield).click();
 	}
-	
+
 	public void fillForm() {
+
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		wait.until(ExpectedConditions.elementToBeClickable(full_Name));
 		
 		driver.findElement(full_Name).sendKeys("kesev");
 		driver.findElement(email).sendKeys("kesev12@gmail.com");

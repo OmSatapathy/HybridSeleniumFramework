@@ -29,6 +29,7 @@ public class Basetest {
                 options.addArguments("--headless=new");
                 options.addArguments("--no-sandbox");
                 options.addArguments("--disable-dev-shm-usage");
+                options.addArguments("--window-size=1920,1080");
             } else {
                 System.out.println("Running locally → Headed mode");
             }
